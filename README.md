@@ -8,11 +8,11 @@ This project is that investigation. It collects system telemetry under a control
 
 The main goals of this project were to answer a few key questions that I imagine are central to someone in this field:
 
-    1. How do you translate a vague user-facing problem (like "my editor feels slow") into a quantifiable and measurable hypothesis?
+1. How do you translate a vague user-facing problem (like "my editor feels slow") into a quantifiable and measurable hypothesis?
 
-    2. How can you design a controlled experiment to isolate a single variable's impact from all the other "noise" on a complex system? What simple models can succeed at this task?
+2. How can you design a controlled experiment to isolate a single variable's impact from all the other "noise" on a complex system? What simple models can succeed at this task?
 
-    3. Finally, how can you use ML models as a tool (not just for prediction) to find the true root cause of a system's behavior?
+3. Finally, how can you use ML models as a tool (not just for prediction) to find the true root cause of a system's behavior?
 
 ## Running This Investigation
 
@@ -49,6 +49,6 @@ The main goals of this project were to answer a few key questions that I imagine
 
 The investigation confirmed the "System Resource Tax" exists: Spotify streaming increased average system CPU by **52.6%** (from 5.50% to 8.39%). The Random Forest model (R² = 0.88) identified **Spotify's direct CPU usage** as the primary driver (49.62% importance), followed by **network I/O** (27.68% combined). However, I do want to mention an observation I made: CPU spikes up to 32.5% were clearly correlated with skipping songs in the playlist. When skipping, Spotify must decode new audio streams, buffer data, and process metadata which are all CPU-intensive operations. If songs had played continuously without skipping, I imagine my hypothesis would have held and network I/O would likely dominate as the primary driver, as it already accounts for over 27% of importance even with skipping behavior. This investigation should demonstrate that user interactions (like skipping songs) can significantly impact system load, and that the "tax" manifests through both direct CPU consumption and indirect network I/O overhead.
 
-image.png
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/e55a8cb8-93db-4a04-84da-e4e2eef401bb" />
 
-image.png
+<img width="1389" height="989" alt="image" src="https://github.com/user-attachments/assets/1ad78a25-b311-49b4-a7ac-f0463d368e2d" />
