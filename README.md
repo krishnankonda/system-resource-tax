@@ -1,4 +1,4 @@
-# System Resource Tax Investigation
+# System Resource Tax
 
 Recently I've had an opportunity that's made me more curious about exploring the intersection of ML and system-level performance. In an effort to research the topic, I wanted to put myself in the shoes of a systems engineer and run a small, data-driven investigation into a program I use daily.
 
